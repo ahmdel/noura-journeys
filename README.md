@@ -8,13 +8,10 @@ City pages from the app:
 - https://noura-journeys.web.app/city/rome
 - … one path per city id
 
-## What is needed for live prices 3x/day
+## Price updates (no Amadeus key)
 
-1. GitHub login as [ahmdel](https://github.com/ahmdel/) (`gh auth login`) with `repo` and `workflow` scopes so this folder can be pushed to `https://github.com/ahmdel/noura-journeys`.
-2. Free Amadeus keys from https://developers.amadeus.com — add GitHub Actions secrets:
-   - `AMADEUS_CLIENT_ID`
-   - `AMADEUS_CLIENT_SECRET`
-   - `AMADEUS_HOSTNAME` = `production` for real market rates (`test` is sandbox data)
-3. Optional: `FIREBASE_TOKEN` so the same Action redeploys Firebase after each price update.
+`scripts/update_prices.py` writes `prices.json` with a dynamic formula (season, weekday, lead time, morning/midday/evening slot). If reachable, it also mixes in a key-free EUR/USD quote from Frankfurter.
 
-Schedule: 08:00, 16:00 and 00:00 Tehran (`30 4,12,20 * * *` UTC).
+GitHub Action runs at 08:00, 16:00 and 00:00 Tehran (`30 4,12,20 * * *` UTC). No Amadeus secrets are required.
+
+Optional: `FIREBASE_TOKEN` so the Action redeploys Firebase after each update.

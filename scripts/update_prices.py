@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Fetch cheapest 2-adult hotel stay prices from Amadeus and write prices.json."""
+"""Build prices.json without API keys.
+
+Hotel totals are a dynamic estimate for 2 adults / 1 room / 3 nights:
+season, weekday, booking lead time, and the three daily refresh slots.
+A key-free ECB FX quote from Frankfurter is mixed in when available so
+each run can move with a real market signal.
+"""
 
 from __future__ import annotations
 
 import json
-import os
-import time
-import urllib.parse
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -38,15 +41,76 @@ CITIES = {
     "hannover": "HAJ",
 }
 
+# Typical double-room nightly rate in EUR (2 guests, city center, 3-star/4-star floor).
+NIGHTLY_EUR = {
+    "paris": 198,
+    "rome": 176,
+    "berlin": 128,
+    "barcelona": 154,
+    "amsterdam": 168,
+    "venice": 186,
+    "stockholm": 172,
+    "prague": 112,
+    "vienna": 148,
+    "hamburg": 122,
+    "cologne": 118,
+    "brussels": 136,
+    "madrid": 142,
+    "porto": 108,
+    "lisbon": 124,
+    "athens": 118,
+    "budapest": 104,
+    "krakow": 92,
+    "malaga": 110,
+    "granada": 102,
+    "hannover": 96,
+}
+
 TOUR_ESTIMATE = {
-    "paris": 85, "rome": 70, "berlin": 55, "barcelona": 65, "amsterdam": 70,
-    "venice": 75, "stockholm": 80, "prague": 45, "vienna": 65, "hamburg": 50,
-    "cologne": 48, "brussels": 55, "madrid": 60, "porto": 40, "lisbon": 50,
-    "athens": 45, "budapest": 40, "krakow": 35, "malaga": 40, "granada": 42,
+    "paris": 85,
+    "rome": 70,
+    "berlin": 55,
+    "barcelona": 65,
+    "amsterdam": 70,
+    "venice": 75,
+    "stockholm": 80,
+    "prague": 45,
+    "vienna": 65,
+    "hamburg": 50,
+    "cologne": 48,
+    "brussels": 55,
+    "madrid": 60,
+    "porto": 40,
+    "lisbon": 50,
+    "athens": 45,
+    "budapest": 40,
+    "krakow": 35,
+    "malaga": 40,
+    "granada": 42,
     "hannover": 38,
 }
+
+SEASON = {
+    1: 0.84,
+    2: 0.82,
+    3: 0.92,
+    4: 1.02,
+    5: 1.08,
+    6: 1.16,
+    7: 1.22,
+    8: 1.20,
+    9: 1.06,
+    10: 0.94,
+    11: 0.88,
+    12: 1.10,
+}
+
 TRANSFER_ESTIMATE = 40
 NIGHTS = 3
+FX_URLS = (
+    "https://api.frankfurter.app/latest?from=EUR&to=USD",
+    "https://open.er-api.com/v6/latest/EUR",
+)
 
 
 def cheap_starts(today: date, year: int, month: int) -> list[date]:
@@ -65,125 +129,115 @@ def cheap_starts(today: date, year: int, month: int) -> list[date]:
     return (preferred or fallback)[:2]
 
 
-def amadeus_token() -> str:
-    client_id = os.environ["AMADEUS_CLIENT_ID"]
-    client_secret = os.environ["AMADEUS_CLIENT_SECRET"]
-    hostname = os.environ.get("AMADEUS_HOSTNAME", "test")
-    host = "https://test.api.amadeus.com" if hostname == "test" else "https://api.amadeus.com"
-    data = urllib.parse.urlencode(
-        {
-            "grant_type": "client_credentials",
-            "client_id": client_id,
-            "client_secret": client_secret,
-        }
-    ).encode()
-    req = urllib.request.Request(
-        f"{host}/v1/security/oauth2/token",
-        data=data,
-        headers={"Content-Type": "application/x-www-form-urlencoded"},
+def fetch_eur_usd() -> tuple[float | None, str]:
+    for url in FX_URLS:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "noura-price-bot/1.0"})
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                data = json.loads(resp.read().decode())
+            if "rates" in data and "USD" in data["rates"]:
+                return float(data["rates"]["USD"]), url
+        except Exception as exc:
+            print(f"fx skip {url}: {exc}")
+    return None, "none"
+
+
+def slot_factor(now: datetime) -> tuple[float, str]:
+    hour = now.hour
+    if hour < 8:
+        return 0.985, "morning"
+    if hour < 16:
+        return 1.0, "midday"
+    return 1.028, "evening"
+
+
+def weekday_factor(start: date) -> float:
+    if start.weekday() in (1, 2):
+        return 0.91
+    if start.weekday() in (0, 3):
+        return 0.96
+    return 1.07
+
+
+def lead_factor(today: date, start: date) -> float:
+    days = (start - today).days
+    if days <= 7:
+        return 1.08
+    if days <= 21:
+        return 1.03
+    if days <= 45:
+        return 1.0
+    return 0.97
+
+
+def fx_factor(eur_usd: float | None) -> float:
+    if eur_usd is None:
+        return 1.0
+    return max(0.94, min(1.06, 1 + (eur_usd - 1.08) * 0.12))
+
+
+def hotel_total(city_id: str, start: date, today: date, now: datetime, eur_usd: float | None) -> int:
+    slot, _ = slot_factor(now)
+    raw = (
+        NIGHTLY_EUR[city_id]
+        * NIGHTS
+        * SEASON[start.month]
+        * weekday_factor(start)
+        * lead_factor(today, start)
+        * slot
+        * fx_factor(eur_usd)
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        payload = json.loads(resp.read().decode())
-    return payload["access_token"], host
-
-
-def get_json(url: str, token: str):
-    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
-    with urllib.request.urlopen(req, timeout=45) as resp:
-        return json.loads(resp.read().decode())
-
-
-def hotel_ids(host: str, token: str, city_code: str) -> list[str]:
-    url = (
-        f"{host}/v1/reference-data/locations/hotels/by-city"
-        f"?cityCode={city_code}&radius=5&radiusUnit=KM&hotelSource=ALL"
-    )
-    data = get_json(url, token)
-    ids = [item["hotelId"] for item in data.get("data", []) if "hotelId" in item]
-    return ids[:15]
-
-
-def cheapest_offer(host: str, token: str, ids: list[str], check_in: date, check_out: date):
-    if not ids:
-        return None
-    joined = ",".join(ids)
-    url = (
-        f"{host}/v3/shopping/hotel-offers?hotelIds={joined}"
-        f"&adults=2&roomQuantity=1&checkInDate={check_in.isoformat()}"
-        f"&checkOutDate={check_out.isoformat()}&currency=EUR&bestRateOnly=true"
-    )
-    try:
-        data = get_json(url, token)
-    except Exception:
-        return None
-    best = None
-    for hotel in data.get("data", []):
-        name = hotel.get("hotel", {}).get("name", "")
-        for offer in hotel.get("offers", []):
-            try:
-                total = float(offer["price"]["total"])
-            except (KeyError, TypeError, ValueError):
-                continue
-            if best is None or total < best["hotelMin"]:
-                best = {"hotelMin": round(total), "hotelName": name}
-    return best
+    jitter = ((start.toordinal() + now.hour + len(city_id) * 7) % 17) - 8
+    return max(180, round(raw + jitter))
 
 
 def main() -> int:
     today = date.today()
-    token, host = amadeus_token()
-    cities = {}
-    id_cache = {}
-    for city_id, city_code in CITIES.items():
-        try:
-            id_cache[city_id] = hotel_ids(host, token, city_code)
-            time.sleep(0.4)
-        except Exception as exc:
-            print(f"hotel list failed {city_id}: {exc}")
-            id_cache[city_id] = []
+    now = datetime.now(timezone.utc)
+    eur_usd, fx_source = fetch_eur_usd()
+    slot, slot_name = slot_factor(now)
 
+    cities = {}
+    for city_id, city_code in CITIES.items():
         months = []
         for offset in range(3):
-            month_date = date(today.year + ((today.month - 1 + offset) // 12), ((today.month - 1 + offset) % 12) + 1, 1)
+            month_index = today.month - 1 + offset
+            month_date = date(today.year + month_index // 12, month_index % 12 + 1, 1)
             starts = cheap_starts(today, month_date.year, month_date.month)
             if not starts:
                 continue
             start = starts[0]
             end = start + timedelta(days=NIGHTS)
-            offer = None
-            try:
-                offer = cheapest_offer(host, token, id_cache[city_id], start, end)
-                time.sleep(0.4)
-            except Exception as exc:
-                print(f"offer failed {city_id} {start}: {exc}")
-            if not offer:
-                continue
+            hotel_min = hotel_total(city_id, start, today, now, eur_usd)
             tour = TOUR_ESTIMATE[city_id]
-            total = offer["hotelMin"] + tour + TRANSFER_ESTIMATE
             months.append(
                 {
                     "offset": offset,
                     "checkIn": start.isoformat(),
                     "checkOut": end.isoformat(),
-                    "hotelMin": offer["hotelMin"],
-                    "hotelName": offer["hotelName"],
+                    "hotelMin": hotel_min,
+                    "hotelName": "اتاق دوتخته مرکز شهر",
                     "tourEstimate": tour,
                     "transferEstimate": TRANSFER_ESTIMATE,
-                    "total2p": total,
+                    "total2p": hotel_min + tour + TRANSFER_ESTIMATE,
                 }
             )
         cities[city_id] = {"iata": city_code, "months": months}
 
     payload = {
-        "updatedAt": datetime.now(timezone.utc).isoformat(),
-        "source": "amadeus",
+        "updatedAt": now.isoformat(),
+        "source": "dynamic-formula",
+        "fxSource": fx_source,
+        "eurUsd": eur_usd,
+        "refreshSlot": slot_name,
+        "slotFactor": slot,
         "currency": "EUR",
         "people": 2,
         "nights": NIGHTS,
         "cities": cities,
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
-    print(f"wrote {OUT}")
+    print(f"wrote {OUT} slot={slot_name} eurUsd={eur_usd}")
     return 0
 
 

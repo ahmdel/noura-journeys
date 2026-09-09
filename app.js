@@ -192,11 +192,11 @@ function renderFilters() {
 function renderPriceStamp() {
   const el = document.getElementById("price-stamp");
   if (!el) return;
-  if (livePrices?.updatedAt && livePrices?.source === "amadeus") {
+  if (livePrices?.updatedAt) {
     const stamp = new Date(livePrices.updatedAt);
-    el.textContent = `قیمت هتل از Amadeus · آخرین به‌روزرسانی ${stamp.toLocaleString("fa-IR")}`;
+    el.textContent = `برآورد پویا · به‌روزرسانی سه‌بار در روز · آخرین بار ${stamp.toLocaleString("fa-IR")}`;
   } else {
-    el.textContent = "قیمت هتل زنده بعد از اتصال کلید Amadeus هر روز سه بار به‌روز می‌شود. فعلاً برآورد نمایش داده می‌شود.";
+    el.textContent = "برآورد پویا هنوز بارگذاری نشده است.";
   }
 }
 
@@ -206,7 +206,7 @@ function renderTours() {
     <article class="tour-card">
       <img src="${tour.city.image}" alt="${tour.city.cityFa}">
       <div class="tour-body">
-        <div class="meta">${tour.live ? "قیمت هتل زنده" : index === 0 ? "ارزان‌ترین برآورد این بازه" : tour.city.countryFa}</div>
+        <div class="meta">${tour.live ? "برآورد به‌روزشده" : index === 0 ? "ارزان‌ترین برآورد این بازه" : tour.city.countryFa}</div>
         <h3>${tour.city.cityFa}</h3>
         <div class="meta">${faDate(tour.start)} تا ${faDate(tour.end)}</div>
         <div class="price">${tour.price} <small>یورو / دو نفر</small></div>
