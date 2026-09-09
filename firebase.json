@@ -1,0 +1,18 @@
+{
+  "hosting": {
+    "site": "noura-journeys",
+    "public": ".",
+    "ignore": ["firebase.json", "**/.*"],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache" }
+        ]
+      }
+    ],
+    "rewrites": [
+      { "source": "/city/**", "destination": "/index.html" }
+    ]
+  }
+}
