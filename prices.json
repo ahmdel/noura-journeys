@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-09-26T09:27:23.397249+00:00",
+  "updatedAt": "2026-09-26T16:33:58.890128+00:00",
   "source": "dynamic-formula",
   "fxSource": "https://api.frankfurter.app/latest?from=EUR&to=USD",
   "eurUsd": 1.1403,
-  "refreshSlot": "midday",
-  "slotFactor": 1.0,
+  "refreshSlot": "evening",
+  "slotFactor": 1.028,
   "currency": "EUR",
   "people": 2,
   "nights": 3,
@@ -16,31 +16,31 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 622,
+          "hotelMin": 647,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 85,
           "transferEstimate": 40,
-          "total2p": 747
+          "total2p": 772
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 533,
+          "hotelMin": 538,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 85,
           "transferEstimate": 40,
-          "total2p": 658
+          "total2p": 663
         },
         {
           "offset": 2,
           "checkIn": "2026-11-03",
           "checkOut": "2026-11-06",
-          "hotelMin": 479,
+          "hotelMin": 500,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 85,
           "transferEstimate": 40,
-          "total2p": 604
+          "total2p": 625
         }
       ]
     },
@@ -51,21 +51,126 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 546,
+          "hotelMin": 569,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 70,
           "transferEstimate": 40,
-          "total2p": 656
+          "total2p": 679
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 468,
+          "hotelMin": 488,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 70,
           "transferEstimate": 40,
-          "total2p": 578
+          "total2p": 598
+        },
+        {
+          "offset": 2,
+          "checkIn": "2026-11-03",
+          "checkOut": "2026-11-06",
+          "hotelMin": 438,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 70,
+          "transferEstimate": 40,
+          "total2p": 548
+        }
+      ]
+    },
+    "berlin": {
+      "iata": "BER",
+      "months": [
+        {
+          "offset": 0,
+          "checkIn": "2026-09-29",
+          "checkOut": "2026-10-02",
+          "hotelMin": 410,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 55,
+          "transferEstimate": 40,
+          "total2p": 505
+        },
+        {
+          "offset": 1,
+          "checkIn": "2026-10-06",
+          "checkOut": "2026-10-09",
+          "hotelMin": 353,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 55,
+          "transferEstimate": 40,
+          "total2p": 448
+        },
+        {
+          "offset": 2,
+          "checkIn": "2026-11-03",
+          "checkOut": "2026-11-06",
+          "hotelMin": 315,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 55,
+          "transferEstimate": 40,
+          "total2p": 410
+        }
+      ]
+    },
+    "barcelona": {
+      "iata": "BCN",
+      "months": [
+        {
+          "offset": 0,
+          "checkIn": "2026-09-29",
+          "checkOut": "2026-10-02",
+          "hotelMin": 498,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 65,
+          "transferEstimate": 40,
+          "total2p": 603
+        },
+        {
+          "offset": 1,
+          "checkIn": "2026-10-06",
+          "checkOut": "2026-10-09",
+          "hotelMin": 428,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 65,
+          "transferEstimate": 40,
+          "total2p": 533
+        },
+        {
+          "offset": 2,
+          "checkIn": "2026-11-03",
+          "checkOut": "2026-11-06",
+          "hotelMin": 384,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 65,
+          "transferEstimate": 40,
+          "total2p": 489
+        }
+      ]
+    },
+    "amsterdam": {
+      "iata": "AMS",
+      "months": [
+        {
+          "offset": 0,
+          "checkIn": "2026-09-29",
+          "checkOut": "2026-10-02",
+          "hotelMin": 544,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 70,
+          "transferEstimate": 40,
+          "total2p": 654
+        },
+        {
+          "offset": 1,
+          "checkIn": "2026-10-06",
+          "checkOut": "2026-10-09",
+          "hotelMin": 467,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 70,
+          "transferEstimate": 40,
+          "total2p": 577
         },
         {
           "offset": 2,
@@ -79,111 +184,6 @@
         }
       ]
     },
-    "berlin": {
-      "iata": "BER",
-      "months": [
-        {
-          "offset": 0,
-          "checkIn": "2026-09-29",
-          "checkOut": "2026-10-02",
-          "hotelMin": 409,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 55,
-          "transferEstimate": 40,
-          "total2p": 504
-        },
-        {
-          "offset": 1,
-          "checkIn": "2026-10-06",
-          "checkOut": "2026-10-09",
-          "hotelMin": 337,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 55,
-          "transferEstimate": 40,
-          "total2p": 432
-        },
-        {
-          "offset": 2,
-          "checkIn": "2026-11-03",
-          "checkOut": "2026-11-06",
-          "hotelMin": 317,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 55,
-          "transferEstimate": 40,
-          "total2p": 412
-        }
-      ]
-    },
-    "barcelona": {
-      "iata": "BCN",
-      "months": [
-        {
-          "offset": 0,
-          "checkIn": "2026-09-29",
-          "checkOut": "2026-10-02",
-          "hotelMin": 478,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 65,
-          "transferEstimate": 40,
-          "total2p": 583
-        },
-        {
-          "offset": 1,
-          "checkIn": "2026-10-06",
-          "checkOut": "2026-10-09",
-          "hotelMin": 410,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 65,
-          "transferEstimate": 40,
-          "total2p": 515
-        },
-        {
-          "offset": 2,
-          "checkIn": "2026-11-03",
-          "checkOut": "2026-11-06",
-          "hotelMin": 367,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 65,
-          "transferEstimate": 40,
-          "total2p": 472
-        }
-      ]
-    },
-    "amsterdam": {
-      "iata": "AMS",
-      "months": [
-        {
-          "offset": 0,
-          "checkIn": "2026-09-29",
-          "checkOut": "2026-10-02",
-          "hotelMin": 522,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 70,
-          "transferEstimate": 40,
-          "total2p": 632
-        },
-        {
-          "offset": 1,
-          "checkIn": "2026-10-06",
-          "checkOut": "2026-10-09",
-          "hotelMin": 447,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 70,
-          "transferEstimate": 40,
-          "total2p": 557
-        },
-        {
-          "offset": 2,
-          "checkIn": "2026-11-03",
-          "checkOut": "2026-11-06",
-          "hotelMin": 401,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 70,
-          "transferEstimate": 40,
-          "total2p": 511
-        }
-      ]
-    },
     "venice": {
       "iata": "VCE",
       "months": [
@@ -191,31 +191,31 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 592,
+          "hotelMin": 598,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 75,
           "transferEstimate": 40,
-          "total2p": 707
+          "total2p": 713
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 491,
+          "hotelMin": 512,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 75,
           "transferEstimate": 40,
-          "total2p": 606
+          "total2p": 627
         },
         {
           "offset": 2,
           "checkIn": "2026-11-03",
           "checkOut": "2026-11-06",
-          "hotelMin": 457,
+          "hotelMin": 460,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 75,
           "transferEstimate": 40,
-          "total2p": 572
+          "total2p": 575
         }
       ]
     },
@@ -226,31 +226,31 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 534,
+          "hotelMin": 557,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 80,
           "transferEstimate": 40,
-          "total2p": 654
+          "total2p": 677
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 458,
+          "hotelMin": 478,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 80,
           "transferEstimate": 40,
-          "total2p": 578
+          "total2p": 598
         },
         {
           "offset": 2,
           "checkIn": "2026-11-03",
           "checkOut": "2026-11-06",
-          "hotelMin": 410,
+          "hotelMin": 429,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 80,
           "transferEstimate": 40,
-          "total2p": 530
+          "total2p": 549
         }
       ]
     },
@@ -261,31 +261,31 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 359,
+          "hotelMin": 358,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 45,
           "transferEstimate": 40,
-          "total2p": 444
+          "total2p": 443
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 294,
+          "hotelMin": 310,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 45,
           "transferEstimate": 40,
-          "total2p": 379
+          "total2p": 395
         },
         {
           "offset": 2,
           "checkIn": "2026-11-03",
           "checkOut": "2026-11-06",
-          "hotelMin": 278,
+          "hotelMin": 276,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 45,
           "transferEstimate": 40,
-          "total2p": 363
+          "total2p": 361
         }
       ]
     },
@@ -296,21 +296,21 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 472,
+          "hotelMin": 475,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 65,
           "transferEstimate": 40,
-          "total2p": 577
+          "total2p": 580
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 390,
+          "hotelMin": 408,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 65,
           "transferEstimate": 40,
-          "total2p": 495
+          "total2p": 513
         },
         {
           "offset": 2,
@@ -331,196 +331,21 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 380,
+          "hotelMin": 398,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 50,
           "transferEstimate": 40,
-          "total2p": 470
+          "total2p": 488
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 328,
+          "hotelMin": 327,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 50,
           "transferEstimate": 40,
-          "total2p": 418
-        },
-        {
-          "offset": 2,
-          "checkIn": "2026-11-03",
-          "checkOut": "2026-11-06",
-          "hotelMin": 292,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 50,
-          "transferEstimate": 40,
-          "total2p": 382
-        }
-      ]
-    },
-    "cologne": {
-      "iata": "CGN",
-      "months": [
-        {
-          "offset": 0,
-          "checkIn": "2026-09-29",
-          "checkOut": "2026-10-02",
-          "hotelMin": 367,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 48,
-          "transferEstimate": 40,
-          "total2p": 455
-        },
-        {
-          "offset": 1,
-          "checkIn": "2026-10-06",
-          "checkOut": "2026-10-09",
-          "hotelMin": 317,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 48,
-          "transferEstimate": 40,
-          "total2p": 405
-        },
-        {
-          "offset": 2,
-          "checkIn": "2026-11-03",
-          "checkOut": "2026-11-06",
-          "hotelMin": 283,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 48,
-          "transferEstimate": 40,
-          "total2p": 371
-        }
-      ]
-    },
-    "brussels": {
-      "iata": "BRU",
-      "months": [
-        {
-          "offset": 0,
-          "checkIn": "2026-09-29",
-          "checkOut": "2026-10-02",
-          "hotelMin": 431,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 55,
-          "transferEstimate": 40,
-          "total2p": 526
-        },
-        {
-          "offset": 1,
-          "checkIn": "2026-10-06",
-          "checkOut": "2026-10-09",
-          "hotelMin": 355,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 55,
-          "transferEstimate": 40,
-          "total2p": 450
-        },
-        {
-          "offset": 2,
-          "checkIn": "2026-11-03",
-          "checkOut": "2026-11-06",
-          "hotelMin": 333,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 55,
-          "transferEstimate": 40,
-          "total2p": 428
-        }
-      ]
-    },
-    "madrid": {
-      "iata": "MAD",
-      "months": [
-        {
-          "offset": 0,
-          "checkIn": "2026-09-29",
-          "checkOut": "2026-10-02",
-          "hotelMin": 453,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 60,
-          "transferEstimate": 40,
-          "total2p": 553
-        },
-        {
-          "offset": 1,
-          "checkIn": "2026-10-06",
-          "checkOut": "2026-10-09",
-          "hotelMin": 374,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 60,
-          "transferEstimate": 40,
-          "total2p": 474
-        },
-        {
-          "offset": 2,
-          "checkIn": "2026-11-03",
-          "checkOut": "2026-11-06",
-          "hotelMin": 351,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 60,
-          "transferEstimate": 40,
-          "total2p": 451
-        }
-      ]
-    },
-    "porto": {
-      "iata": "OPO",
-      "months": [
-        {
-          "offset": 0,
-          "checkIn": "2026-09-29",
-          "checkOut": "2026-10-02",
-          "hotelMin": 339,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 40,
-          "transferEstimate": 40,
-          "total2p": 419
-        },
-        {
-          "offset": 1,
-          "checkIn": "2026-10-06",
-          "checkOut": "2026-10-09",
-          "hotelMin": 294,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 40,
-          "transferEstimate": 40,
-          "total2p": 374
-        },
-        {
-          "offset": 2,
-          "checkIn": "2026-11-03",
-          "checkOut": "2026-11-06",
-          "hotelMin": 261,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 40,
-          "transferEstimate": 40,
-          "total2p": 341
-        }
-      ]
-    },
-    "lisbon": {
-      "iata": "LIS",
-      "months": [
-        {
-          "offset": 0,
-          "checkIn": "2026-09-29",
-          "checkOut": "2026-10-02",
-          "hotelMin": 396,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 50,
-          "transferEstimate": 40,
-          "total2p": 486
-        },
-        {
-          "offset": 1,
-          "checkIn": "2026-10-06",
-          "checkOut": "2026-10-09",
-          "hotelMin": 326,
-          "hotelName": "اتاق دوتخته مرکز شهر",
-          "tourEstimate": 50,
-          "transferEstimate": 40,
-          "total2p": 416
+          "total2p": 417
         },
         {
           "offset": 2,
@@ -534,6 +359,181 @@
         }
       ]
     },
+    "cologne": {
+      "iata": "CGN",
+      "months": [
+        {
+          "offset": 0,
+          "checkIn": "2026-09-29",
+          "checkOut": "2026-10-02",
+          "hotelMin": 385,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 48,
+          "transferEstimate": 40,
+          "total2p": 473
+        },
+        {
+          "offset": 1,
+          "checkIn": "2026-10-06",
+          "checkOut": "2026-10-09",
+          "hotelMin": 316,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 48,
+          "transferEstimate": 40,
+          "total2p": 404
+        },
+        {
+          "offset": 2,
+          "checkIn": "2026-11-03",
+          "checkOut": "2026-11-06",
+          "hotelMin": 298,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 48,
+          "transferEstimate": 40,
+          "total2p": 386
+        }
+      ]
+    },
+    "brussels": {
+      "iata": "BRU",
+      "months": [
+        {
+          "offset": 0,
+          "checkIn": "2026-09-29",
+          "checkOut": "2026-10-02",
+          "hotelMin": 433,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 55,
+          "transferEstimate": 40,
+          "total2p": 528
+        },
+        {
+          "offset": 1,
+          "checkIn": "2026-10-06",
+          "checkOut": "2026-10-09",
+          "hotelMin": 372,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 55,
+          "transferEstimate": 40,
+          "total2p": 467
+        },
+        {
+          "offset": 2,
+          "checkIn": "2026-11-03",
+          "checkOut": "2026-11-06",
+          "hotelMin": 332,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 55,
+          "transferEstimate": 40,
+          "total2p": 427
+        }
+      ]
+    },
+    "madrid": {
+      "iata": "MAD",
+      "months": [
+        {
+          "offset": 0,
+          "checkIn": "2026-09-29",
+          "checkOut": "2026-10-02",
+          "hotelMin": 456,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 60,
+          "transferEstimate": 40,
+          "total2p": 556
+        },
+        {
+          "offset": 1,
+          "checkIn": "2026-10-06",
+          "checkOut": "2026-10-09",
+          "hotelMin": 392,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 60,
+          "transferEstimate": 40,
+          "total2p": 492
+        },
+        {
+          "offset": 2,
+          "checkIn": "2026-11-03",
+          "checkOut": "2026-11-06",
+          "hotelMin": 350,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 60,
+          "transferEstimate": 40,
+          "total2p": 450
+        }
+      ]
+    },
+    "porto": {
+      "iata": "OPO",
+      "months": [
+        {
+          "offset": 0,
+          "checkIn": "2026-09-29",
+          "checkOut": "2026-10-02",
+          "hotelMin": 355,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 40,
+          "transferEstimate": 40,
+          "total2p": 435
+        },
+        {
+          "offset": 1,
+          "checkIn": "2026-10-06",
+          "checkOut": "2026-10-09",
+          "hotelMin": 292,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 40,
+          "transferEstimate": 40,
+          "total2p": 372
+        },
+        {
+          "offset": 2,
+          "checkIn": "2026-11-03",
+          "checkOut": "2026-11-06",
+          "hotelMin": 276,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 40,
+          "transferEstimate": 40,
+          "total2p": 356
+        }
+      ]
+    },
+    "lisbon": {
+      "iata": "LIS",
+      "months": [
+        {
+          "offset": 0,
+          "checkIn": "2026-09-29",
+          "checkOut": "2026-10-02",
+          "hotelMin": 397,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 50,
+          "transferEstimate": 40,
+          "total2p": 487
+        },
+        {
+          "offset": 1,
+          "checkIn": "2026-10-06",
+          "checkOut": "2026-10-09",
+          "hotelMin": 342,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 50,
+          "transferEstimate": 40,
+          "total2p": 432
+        },
+        {
+          "offset": 2,
+          "checkIn": "2026-11-03",
+          "checkOut": "2026-11-06",
+          "hotelMin": 305,
+          "hotelName": "اتاق دوتخته مرکز شهر",
+          "tourEstimate": 50,
+          "transferEstimate": 40,
+          "total2p": 395
+        }
+      ]
+    },
     "athens": {
       "iata": "ATH",
       "months": [
@@ -541,31 +541,31 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 377,
+          "hotelMin": 378,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 45,
           "transferEstimate": 40,
-          "total2p": 462
+          "total2p": 463
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 310,
+          "hotelMin": 326,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 45,
           "transferEstimate": 40,
-          "total2p": 395
+          "total2p": 411
         },
         {
           "offset": 2,
           "checkIn": "2026-11-03",
           "checkOut": "2026-11-06",
-          "hotelMin": 293,
+          "hotelMin": 291,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 45,
           "transferEstimate": 40,
-          "total2p": 378
+          "total2p": 376
         }
       ]
     },
@@ -586,21 +586,21 @@
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 270,
+          "hotelMin": 285,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 40,
           "transferEstimate": 40,
-          "total2p": 350
+          "total2p": 365
         },
         {
           "offset": 2,
           "checkIn": "2026-11-03",
           "checkOut": "2026-11-06",
-          "hotelMin": 256,
+          "hotelMin": 253,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 40,
           "transferEstimate": 40,
-          "total2p": 336
+          "total2p": 333
         }
       ]
     },
@@ -611,31 +611,31 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 296,
+          "hotelMin": 294,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 35,
           "transferEstimate": 40,
-          "total2p": 371
+          "total2p": 369
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 241,
+          "hotelMin": 255,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 35,
           "transferEstimate": 40,
-          "total2p": 316
+          "total2p": 330
         },
         {
           "offset": 2,
           "checkIn": "2026-11-03",
           "checkOut": "2026-11-06",
-          "hotelMin": 230,
+          "hotelMin": 226,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 35,
           "transferEstimate": 40,
-          "total2p": 305
+          "total2p": 301
         }
       ]
     },
@@ -656,21 +656,21 @@
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 289,
+          "hotelMin": 304,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 40,
           "transferEstimate": 40,
-          "total2p": 369
+          "total2p": 384
         },
         {
           "offset": 2,
           "checkIn": "2026-11-03",
           "checkOut": "2026-11-06",
-          "hotelMin": 273,
+          "hotelMin": 271,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 40,
           "transferEstimate": 40,
-          "total2p": 353
+          "total2p": 351
         }
       ]
     },
@@ -681,31 +681,31 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 317,
+          "hotelMin": 333,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 42,
           "transferEstimate": 40,
-          "total2p": 399
+          "total2p": 415
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 275,
+          "hotelMin": 272,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 42,
           "transferEstimate": 40,
-          "total2p": 357
+          "total2p": 354
         },
         {
           "offset": 2,
           "checkIn": "2026-11-03",
           "checkOut": "2026-11-06",
-          "hotelMin": 244,
+          "hotelMin": 258,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 42,
           "transferEstimate": 40,
-          "total2p": 326
+          "total2p": 340
         }
       ]
     },
@@ -716,31 +716,31 @@
           "offset": 0,
           "checkIn": "2026-09-29",
           "checkOut": "2026-10-02",
-          "hotelMin": 305,
+          "hotelMin": 304,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 38,
           "transferEstimate": 40,
-          "total2p": 383
+          "total2p": 382
         },
         {
           "offset": 1,
           "checkIn": "2026-10-06",
           "checkOut": "2026-10-09",
-          "hotelMin": 249,
+          "hotelMin": 263,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 38,
           "transferEstimate": 40,
-          "total2p": 327
+          "total2p": 341
         },
         {
           "offset": 2,
           "checkIn": "2026-11-03",
           "checkOut": "2026-11-06",
-          "hotelMin": 236,
+          "hotelMin": 233,
           "hotelName": "اتاق دوتخته مرکز شهر",
           "tourEstimate": 38,
           "transferEstimate": 40,
-          "total2p": 314
+          "total2p": 311
         }
       ]
     }
